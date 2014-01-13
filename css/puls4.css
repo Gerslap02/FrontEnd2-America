@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'iconos';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format('embedded-opentype'), url("../fonts/icomoon.woff") format('woff'), url("../fonts/icomoon.ttf") format('truetype'), url("../fonts/icomoon.svg#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 a {
   color: #dd4f24;
 }
@@ -6,6 +13,24 @@ body {
   color: #444;
   font-family: Arial;
   font-size: 16px;
+}
+footer {
+  background: #dd4f24;
+  color: rgba(255,255,255,0.5);
+  padding: 1em 0;
+  text-align: center;
+  width: 100%;
+}
+footer h3 {
+  font-size: 14px;
+  font-weight: normal;
+}
+footer h3 strong {
+  display: block;
+}
+footer h3 .mejor:before,
+footer h3 .mejor:after {
+  content: " - ";
 }
 header {
   background: #444;
@@ -19,6 +44,7 @@ header {
 header .logo {
   border-right: 1px solid #22bce0;
   width: 60px;
+  float: left;
 }
 header .logo img {
   width: 52px;
@@ -40,6 +66,13 @@ header .titular .publicar {
   font-style: italic;
   padding: 0.2em 0.5em;
   text-decoration: none;
+  text-shadow: 1px 1px 0px #000;
+}
+header .titular .publicar:before {
+  font-family: "iconos";
+  content: "\e600";
+  display: inline-block;
+  margin: 0 3px 0 0;
   text-shadow: 1px 1px 0px #000;
 }
 header .titular .titulo {
@@ -74,6 +107,14 @@ header .usuario .flechita {
   top: 15px;
   width: 50%;
 }
+header .usuario .flechita:after {
+  font-family: "iconos";
+  content: "\e602";
+  display: block;
+  margin: 1px 0 0 1px;
+  font-size: 1 2 3 4 5;
+  text-shadow: 1px 1px 0px #000;
+}
 nav {
   background: #22bce0;
   border-left: 15px solid #fff;
@@ -96,6 +137,9 @@ nav .menu {
   overflow-x: auto;
   white-space: nowrap;
 }
+nav .menu::-webkit-scrollbar {
+  display: none;
+}
 nav .menu li {
   display: inline-block;
 }
@@ -117,6 +161,7 @@ nav .menu li a:hover {
   border-radius: 0 0 0.5em 0.5em;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
   color: #7a7a7a;
+  margin-bottom: 0.5em;
 }
 .posts .post .acciones {
   border-top: 3px solid #22bce0;
@@ -134,6 +179,15 @@ nav .menu li a:hover {
   padding: 2px 5px;
   text-decoration: none;
 }
+.posts .post .acciones .datos .estrellita {
+  text-decoration: none;
+}
+.posts .post .acciones .datos .estrellita:after {
+  font-family: "iconos";
+  content: "\e601";
+  color: #fcb92d;
+  font-size: 1.1em;
+}
 .posts .post .acciones .votos {
   float: left;
 }
@@ -141,11 +195,23 @@ nav .menu li a:hover {
 .posts .post .acciones .votos .down {
   text-decoration: none;
 }
+.posts .post .acciones .votos .up:before,
+.posts .post .acciones .votos .down:before {
+  font-family: "iconos";
+  font-size: 1.5em;
+  vertical-align: middle;
+}
 .posts .post .acciones .votos .up {
   color: #008000;
 }
+.posts .post .acciones .votos .up:before {
+  content: "\e603";
+}
 .posts .post .acciones .votos .down {
   color: #f00;
+}
+.posts .post .acciones .votos .down:before {
+  content: "\e602";
 }
 .posts .post .descripcion .detalles {
   height: 160px;
@@ -180,9 +246,24 @@ nav .menu li a:hover {
   width: 120px;
   vertical-align: top;
 }
-.left {
-  float: left;
-}
-.rigth {
-  float: right;
+@media screen and (min-width: 768px) {
+  header .titular .publicar {
+    font-size: 1.1em;
+    padding-left: 3em;
+    position: relative;
+  }
+  header .titular .publicar:before {
+    left: 0;
+    font-size: 2.5em;
+    position: absolute;
+    top: -10px;
+  }
+  .posts .post {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+  }
+  .posts .post:nth-child(odd) {
+    margin-right: 1%;
+  }
 }
